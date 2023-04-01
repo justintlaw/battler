@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://waltl2afwcto"]
+
+[ext_resource type="Script" path="res://scenes/enemy_controller.gd" id="1_nt22w"]
+
+[node name="EnemyController" type="Node"]
+script = ExtResource("1_nt22w")

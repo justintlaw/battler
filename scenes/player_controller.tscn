@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c6yfnjxuvvyjf"]
+
+[ext_resource type="Script" path="res://scenes/player_controller.gd" id="1_fh278"]
+
+[node name="PlayerController" type="Node"]
+script = ExtResource("1_fh278")
+group = "player"

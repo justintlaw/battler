@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bsj5h4s3fglxf"]
+
+[ext_resource type="Script" path="res://scenes/voice_handler.gd" id="1_7b8ap"]
+
+[node name="VoiceHandler" type="Node"]
+script = ExtResource("1_7b8ap")

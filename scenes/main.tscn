@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnmfsf14hsa0s"]
+
+[ext_resource type="PackedScene" uid="uid://c1bpp5nmc332v" path="res://scenes/map/map.tscn" id="1_4x1mu"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_j0goc"]
+[ext_resource type="PackedScene" uid="uid://dsy2elb7qua7q" path="res://scenes/flag/flag.tscn" id="4_lh5w0"]
+[ext_resource type="PackedScene" uid="uid://c6yfnjxuvvyjf" path="res://scenes/player_controller.tscn" id="4_pty38"]
+[ext_resource type="PackedScene" uid="uid://waltl2afwcto" path="res://scenes/enemy_controller.tscn" id="5_n6r3t"]
+[ext_resource type="PackedScene" uid="uid://bsj5h4s3fglxf" path="res://scenes/voice_handler.tscn" id="6_4xtr1"]
+
+[sub_resource type="Curve2D" id="Curve2D_yeu6v"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 250, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 250, 0)
+}
+point_count = 3
+
+[sub_resource type="Curve2D" id="Curve2D_7yiw8"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 710, 544, 0, 0, 0, 0, 960, 544, 0, 0, 0, 0, 960, 294)
+}
+point_count = 3
+
+[node name="Main" type="Node"]
+script = ExtResource("1_j0goc")
+
+[node name="Map" parent="." instance=ExtResource("1_4x1mu")]
+
+[node name="Flag" parent="." instance=ExtResource("4_lh5w0")]
+position = Vector2(485, 268)
+
+[node name="PlayerController" parent="." node_paths=PackedStringArray("flag", "spawnPath") instance=ExtResource("4_pty38")]
+flag = NodePath("../Flag")
+spawnPath = NodePath("../PlayerMinionSpawnPath/PathFollow2D")
+
+[node name="EnemyController" parent="." node_paths=PackedStringArray("flag", "spawnPath") instance=ExtResource("5_n6r3t")]
+group = "enemy"
+flag = NodePath("../Flag")
+spawnPath = NodePath("../EnemyMinionSpawnPath/PathFollow2D")
+
+[node name="PlayerMinionSpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_yeu6v")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="PlayerMinionSpawnPath"]
+position = Vector2(0, 250)
+rotation = -1.5708
+
+[node name="EnemyMinionSpawnPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_7yiw8")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="EnemyMinionSpawnPath"]
+position = Vector2(710, 544)
+
+[node name="VoiceHandler" parent="." instance=ExtResource("6_4xtr1")]
+
+[node name="GoldTimer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="issue_command" from="VoiceHandler" to="." method="_on_VoiceHandler_issue_command"]
+[connection signal="timeout" from="GoldTimer" to="." method="_on_gold_timer_timeout"]

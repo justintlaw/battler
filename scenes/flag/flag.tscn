@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsy2elb7qua7q"]
+
+[ext_resource type="Script" path="res://scenes/flag/flag.gd" id="1_kc6o1"]
+[ext_resource type="Texture2D" uid="uid://h4pixfau8ue0" path="res://art/map/flag_tiny.png" id="2_jgkuq"]
+
+[node name="Flag" type="Node2D"]
+script = ExtResource("1_kc6o1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_jgkuq")
