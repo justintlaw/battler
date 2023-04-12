@@ -21,6 +21,9 @@ func _on_VoiceHandler_issue_command(jsonCommand):
 
 
 func handle_minions_command(jsonCommand):
+	if "item" not in jsonCommand or "amount" not in jsonCommand:
+		return
+	
 	if jsonCommand.action == "buy":
 		for i in range(jsonCommand.amount):
 			if jsonCommand.item == "warrior":
@@ -33,7 +36,7 @@ func handle_minions_command(jsonCommand):
 					print("not enough gold")
 			elif jsonCommand.item == "ranged":
 				pass
-#				$PlayerController.spawn_minion(MinionStats.DWARF_RANGED)
+				$PlayerController.spawn_minion(MinionStats.DWARF_RANGED)
 			elif jsonCommand.item == "rider":
 				$PlayerController.spawn_minion(MinionStats.DWARF_RIDER)
 

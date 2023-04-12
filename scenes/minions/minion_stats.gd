@@ -26,6 +26,18 @@ const BANDIT_WARRIOR = {
 	baseSprite = "bandit_warrior_"
 }
 
+# RANGED
+const DWARF_RANGED = {
+	health = 100,
+	damage = 15,
+	speed = 3000,
+	attackRange = 60,
+	detectionRange = 100,
+	attackCooldown = 2,
+	cost = 20,
+	baseSprite = "dwarf_ranged_"
+}
+
 # RIDERS
 
 const DWARF_RIDER = {

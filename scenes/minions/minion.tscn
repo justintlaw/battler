@@ -1,10 +1,11 @@
-[gd_scene load_steps=99 format=3 uid="uid://ja1snu50dor7"]
+[gd_scene load_steps=117 format=3 uid="uid://ja1snu50dor7"]
 
 [ext_resource type="Script" path="res://scenes/minions/minion.gd" id="1_b8uxy"]
 [ext_resource type="Texture2D" uid="uid://by3ffpe1apa0" path="res://art/bandits/MiniBandit.png" id="2_cprri"]
 [ext_resource type="Texture2D" uid="uid://dipocmyaauxsx" path="res://art/dwarves/MiniDwarfBearRider.png" id="2_rbe37"]
 [ext_resource type="Texture2D" uid="uid://52f7tqqgnwo8" path="res://art/bandits/MiniBanditHorseman.png" id="2_venwr"]
 [ext_resource type="Texture2D" uid="uid://drm0p0wd8cuu3" path="res://art/dwarves/MiniDwarfWarrior.png" id="2_wmp1n"]
+[ext_resource type="Texture2D" uid="uid://dkeo0j2k072o3" path="res://art/dwarves/MiniDwarfCrossbowman.png" id="4_310kt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_my0t8"]
 radius = 8.0
@@ -193,6 +194,74 @@ region = Rect2(128, 32, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_6o5l3"]
 atlas = ExtResource("2_cprri")
 region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbxmp"]
+atlas = ExtResource("4_310kt")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llvt8"]
+atlas = ExtResource("4_310kt")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i8u5q"]
+atlas = ExtResource("4_310kt")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieor7"]
+atlas = ExtResource("4_310kt")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ff1hd"]
+atlas = ExtResource("4_310kt")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6nwuy"]
+atlas = ExtResource("4_310kt")
+region = Rect2(0, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbokv"]
+atlas = ExtResource("4_310kt")
+region = Rect2(32, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0bskk"]
+atlas = ExtResource("4_310kt")
+region = Rect2(64, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rptn"]
+atlas = ExtResource("4_310kt")
+region = Rect2(96, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fukm0"]
+atlas = ExtResource("4_310kt")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbug8"]
+atlas = ExtResource("4_310kt")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_363e3"]
+atlas = ExtResource("4_310kt")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6kgm"]
+atlas = ExtResource("4_310kt")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i7nt"]
+atlas = ExtResource("4_310kt")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dn72q"]
+atlas = ExtResource("4_310kt")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vf5jd"]
+atlas = ExtResource("4_310kt")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydc26"]
+atlas = ExtResource("4_310kt")
+region = Rect2(96, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lmckv"]
 atlas = ExtResource("2_rbe37")
@@ -557,6 +626,77 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_pbxmp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llvt8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i8u5q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieor7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ff1hd")
+}],
+"loop": true,
+"name": &"dwarf_ranged_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6nwuy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbokv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0bskk")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_7rptn")
+}],
+"loop": true,
+"name": &"dwarf_ranged_die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fukm0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbug8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_363e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o6kgm")
+}],
+"loop": true,
+"name": &"dwarf_ranged_idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i7nt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dn72q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vf5jd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ydc26")
+}],
+"loop": true,
+"name": &"dwarf_ranged_move",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_lmckv")
 }, {
 "duration": 1.0,
@@ -748,8 +888,7 @@ shape = SubResource("CapsuleShape2D_my0t8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_duceu")
-animation = &"dwarf_rider_attack"
-frame_progress = 0.665772
+animation = &"dwarf_rider_die"
 
 [node name="DetectionRange" type="Area2D" parent="."]
 collision_layer = 0
