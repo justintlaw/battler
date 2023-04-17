@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://sn2bflx2xj2y"]
+
+[ext_resource type="Script" path="res://scenes/ui/soldier_info.gd" id="1_dlgee"]
+
+[node name="SoldierInfo" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dlgee")
+
+[node name="Soldiers" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Warriors" type="MarginContainer" parent="Soldiers"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Soldiers/Warriors"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Soldiers/Warriors/HBoxContainer"]
+layout_mode = 2
+text = "Warriors: 0"
+
+[node name="Button" type="Button" parent="Soldiers/Warriors/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "BUY"
+
+[node name="Ranged" type="MarginContainer" parent="Soldiers"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Soldiers/Ranged"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Soldiers/Ranged/HBoxContainer"]
+layout_mode = 2
+text = "Ranged: 0"
+
+[node name="Button" type="Button" parent="Soldiers/Ranged/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "BUY"
+
+[node name="Riders" type="MarginContainer" parent="Soldiers"]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Soldiers/Riders"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Soldiers/Riders/HBoxContainer"]
+layout_mode = 2
+text = "Riders: 0"
+
+[node name="Button" type="Button" parent="Soldiers/Riders/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "BUY"

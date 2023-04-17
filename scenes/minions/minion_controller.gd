@@ -2,6 +2,8 @@ extends Node
 
 class_name MinionController
 
+signal minion_spawned
+
 @export var group: String
 @export var flag: Node2D
 @export var spawnPath: PathFollow2D
@@ -34,3 +36,8 @@ func spawn_minion(minionType):
 #		minion.position = Vector2(800, 400)	
 
 	add_child(minion)
+	minion_spawned.emit(minionType)
+	
+	if group == Constants.Groups.PLAYER:
+		var soldierInfo = get_node("/root/Main/SoldierInfo")
+		minion.die.connect(soldierInfo.on_minion_die)

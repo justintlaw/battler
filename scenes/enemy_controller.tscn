@@ -4,3 +4,9 @@
 
 [node name="EnemyController" type="Node"]
 script = ExtResource("1_nt22w")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[connection signal="timeout" from="SpawnTimer" to="." method="_on_spawn_timer_timeout"]

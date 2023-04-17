@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cnmfsf14hsa0s"]
+[gd_scene load_steps=10 format=3 uid="uid://cnmfsf14hsa0s"]
 
 [ext_resource type="PackedScene" uid="uid://c1bpp5nmc332v" path="res://scenes/map/map.tscn" id="1_4x1mu"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_j0goc"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c6yfnjxuvvyjf" path="res://scenes/player_controller.tscn" id="4_pty38"]
 [ext_resource type="PackedScene" uid="uid://waltl2afwcto" path="res://scenes/enemy_controller.tscn" id="5_n6r3t"]
 [ext_resource type="PackedScene" uid="uid://bsj5h4s3fglxf" path="res://scenes/voice_handler.tscn" id="6_4xtr1"]
+[ext_resource type="PackedScene" uid="uid://sn2bflx2xj2y" path="res://scenes/ui/soldier_info.tscn" id="7_o31up"]
 
 [sub_resource type="Curve2D" id="Curve2D_yeu6v"]
 _data = {
@@ -55,5 +56,8 @@ position = Vector2(710, 544)
 wait_time = 5.0
 autostart = true
 
+[node name="SoldierInfo" parent="." instance=ExtResource("7_o31up")]
+
+[connection signal="minion_spawned" from="PlayerController" to="SoldierInfo" method="_on_player_controller_minion_spawned"]
 [connection signal="issue_command" from="VoiceHandler" to="." method="_on_VoiceHandler_issue_command"]
 [connection signal="timeout" from="GoldTimer" to="." method="_on_gold_timer_timeout"]

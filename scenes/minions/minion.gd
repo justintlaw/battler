@@ -9,6 +9,7 @@ signal die
 @export var detectionRange := 100
 @export var attackCooldown := 2
 var baseSprite: String
+var minionType
 
 var flagPosition: Vector2
 var target
@@ -17,6 +18,7 @@ var targetScanTimer: Timer
 var attackCooldownTimer: Timer
 var attackCooldownActive := false
 var isAttacking := false
+var isDying := false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,14 +35,15 @@ func _ready():
 
 
 func _draw():
-	draw_arc(
-		Vector2(0, 0),
-		$DetectionRange/CollisionShape2D.shape.radius,
-		deg_to_rad(0),
-		deg_to_rad(360),
-		20,
-		Color.RED
-	)
+	pass
+#	draw_arc(
+#		Vector2(0, 0),
+#		$DetectionRange/CollisionShape2D.shape.radius,
+#		deg_to_rad(0),
+#		deg_to_rad(360),
+#		20,
+#		Color.RED
+#	)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -83,6 +86,7 @@ func _on_target_scan_timer_timeout():
 			
 
 func setup(minionType):
+	self.minionType = minionType.duplicate(true)
 	health = minionType.health
 	damage = minionType.damage
 	speed = minionType.speed
@@ -136,13 +140,14 @@ func _on_attack_cooldown_timer_timeout():
 func take_damage(amount: int):
 	health -= amount
 
-	if health <= 0:
+	if not isDying and health <= 0:
 		health = 0
+		isDying = true
 		
 		if is_in_group(Constants.Groups.ENEMY):
 			State.gold += 10
 
-		die.emit()
+		die.emit(minionType)
 
 func get_closest_target(targets: Array[Node2D]):
 	var closest_target = null

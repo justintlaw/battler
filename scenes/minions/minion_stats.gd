@@ -5,6 +5,7 @@ class_name MinionStats
 # WARRIORS
 
 const DWARF_WARRIOR = {
+	baseClass = "warrior",
 	health = 100,
 	damage = 20,
 	speed = 3000,
@@ -16,6 +17,7 @@ const DWARF_WARRIOR = {
 }
 
 const BANDIT_WARRIOR = {
+	baseClass = "warrior",	
 	health = 100,
 	damage = 20,
 	speed = 3000,
@@ -28,6 +30,7 @@ const BANDIT_WARRIOR = {
 
 # RANGED
 const DWARF_RANGED = {
+	baseClass = "ranged",
 	health = 100,
 	damage = 15,
 	speed = 3000,
@@ -41,6 +44,7 @@ const DWARF_RANGED = {
 # RIDERS
 
 const DWARF_RIDER = {
+	baseClass = "rider",
 	health = 150,
 	damage = 25,
 	speed = 4000,
@@ -52,6 +56,7 @@ const DWARF_RIDER = {
 }
 
 const BANDIT_RIDER = {
+	baseClass = "rider",
 	health = 150,
 	damage = 25,
 	speed = 4000,
